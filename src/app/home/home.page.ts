@@ -17,9 +17,11 @@ export class HomePage  implements OnInit{
   ngOnInit() {
     this.films = this.http.get('https://swapi.dev/api/films')
   }
-  openDetails(film){
-  let split = film.url.split('/');
-  let filmId = split[split.length-2];
-  this.router.navigateByUrl(`/filme-detalhe/${filmId}`)
+
+  openDetails(film:any){
+    let split = film.url.split('/');
+    let filmId = split[split.length-2];
+    this.router.navigateByUrl(`/filme-detalhe/${filmId}`)
   }
+
 }
